@@ -1,0 +1,8 @@
+hallmark
+Source: https://github.com/Nutlope/hallmark/tree/main/skills/hallmark
+Snapshot: 2026-10-31 (Asia/Seoul)
+License: MIT
+Installed snapshot with original reference library. Added upstream MIT license and this NOTICE. Modified SKILL.md: moved version to metadata and added a sandbox portability note. Origin: Hallmark contributors.
+
+Portability repair: bundled site/css/tokens.css from upstream commit 72f3dc052e661e2e084d5da75dfc3cff5bf7dff0 as references/upstream/tokens.css. Repointed theme-token links locally and human-only example/docs links to GitHub permalinks at that commit.
+Changed Markdown files: SKILL.md, references/custom-theme.md, references/hero-enrichment.md, references/themes/carnival.md, references/themes/cobalt.md, references/themes/hum.md, references/themes/lumen.md
