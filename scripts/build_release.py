@@ -9,7 +9,6 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "v1.0.0"
 
 
 def files_under(folder):
@@ -30,6 +29,7 @@ def write_zip(destination, files):
 def main():
     subprocess.run([sys.executable, str(ROOT / "scripts/verify.py")], check=True)
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+    version = catalog["release_version"]
     output = ROOT / ".release"
     output.mkdir(exist_ok=True)
     archives = []
@@ -39,7 +39,7 @@ def main():
                  for p in files_under(ROOT / "skills" / name)]
         write_zip(destination, files)
         archives.append(destination)
-    for name in ("web", "design"):
+    for name in ("web", "design", "writing"):
         destination = output / (name + ".zip")
         files = [(p, p.relative_to(ROOT / "skills").as_posix())
                  for skill in catalog["profiles"][name]
@@ -51,7 +51,7 @@ def main():
         ".gitignore", ".gitattributes")]
     for folder in ("skills", "scripts", "tests"):
         all_files.extend(files_under(ROOT / folder))
-    destination = output / ("hackathon-web-skills-" + VERSION + ".zip")
+    destination = output / ("hackathon-web-skills-" + version + ".zip")
     write_zip(destination, [(p, "hackathon-web-skills/" + p.relative_to(ROOT).as_posix())
                             for p in sorted(all_files)])
     archives.append(destination)

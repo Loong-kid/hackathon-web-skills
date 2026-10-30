@@ -1,0 +1,5 @@
+humanizer
+Source: https://github.com/blader/humanizer
+Snapshot: 2026-10-31 (Asia/Seoul)
+License: MIT
+Copyright (c) 2025 Siqi Chen. Installed SKILL.md, LICENSE, and agents metadata preserved; added this NOTICE. Repository development scripts, plugin wrappers, and maintenance files are omitted because they are not runtime dependencies of the Markdown skill. SKILL.md matches the public upstream file inspected when packaging.

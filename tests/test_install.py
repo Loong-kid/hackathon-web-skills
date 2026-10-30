@@ -78,6 +78,28 @@ class InstallTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse(self.project.exists())
 
+    def test_writing_helpers_run_and_reinstall_ignores_python_caches(self):
+        result = self.run_installer("--profile", "writing", "--project", self.project)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        target = self.project / ".agents/skills"
+        self.assertEqual({p.name for p in target.iterdir()}, {"humanize-korean", "humanizer"})
+        run_dir = Path(self.temp.name) / "sample run"
+        run_dir.mkdir()
+        (run_dir / "01_input.txt").write_text(
+            "2026년 10월 31일에 동네 도서관을 찾았다. 읽고 싶은 책 세 권을 빌렸다. "
+            "새로 생긴 열람실에는 창문이 두 개 있었다. 창가 자리에 앉아 책을 읽었다.",
+            encoding="utf-8")
+        prepare = target / "humanize-korean/scripts/prepare_monolith_input.py"
+        prepared = subprocess.run([sys.executable, str(prepare), "--run-dir", str(run_dir),
+                                   "--genre", "report"], capture_output=True, encoding="utf-8")
+        self.assertEqual(prepared.returncode, 0, prepared.stderr)
+        self.assertTrue((run_dir / "00_metrics.json").is_file())
+        self.assertTrue((run_dir / "01_input_with_metrics.txt").is_file())
+        self.assertTrue(list((target / "humanize-korean").rglob("*.pyc")))
+        repeated = self.run_installer("--profile", "writing", "--project", self.project)
+        self.assertEqual(repeated.returncode, 0, repeated.stderr)
+        self.assertIn("Already installed: humanize-korean", repeated.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

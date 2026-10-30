@@ -10,6 +10,8 @@ or Hallmark distribution. Names identify the original projects.
 | `skills/frontend-design/` | Installed snapshot from [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | Apache-2.0 | Original instruction/license bytes preserved; added NOTICE and upstream third-party notices |
 | `skills/hallmark/` | Installed snapshot from [Nutlope/hallmark](https://github.com/Nutlope/hallmark/tree/main/skills/hallmark) | MIT | Moved version into metadata; added portability note, MIT license, NOTICE, and canonical theme tokens; repaired resource links |
 | `skills/imagegen/` | Installed Codex system snapshot; [public source location](https://github.com/openai/skills/tree/main/skills/.system/imagegen) | Apache-2.0 | Original skill, resources, scripts, assets, and license preserved; added NOTICE |
+| `skills/humanize-korean/` | Installed Codex-adapted snapshot of [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-not-ai/tree/main/skills/humanize-korean) | MIT, copyright 2026 epoko77-ai | Original instructions, references, scripts, and UI metadata preserved; excluded generated caches; added NOTICE |
+| `skills/humanizer/` | Installed snapshot of [blader/humanizer](https://github.com/blader/humanizer) | MIT, copyright 2025 Siqi Chen | Original SKILL.md, LICENSE, and UI metadata preserved; added NOTICE; upstream development and plugin packaging files omitted |
 | `skills/web-build/`, `skills/web-check/` | Written for this repository | MIT | Original portable instructions, not copies of proprietary plugin skills |
 | Packaging scripts, tests, and repository documentation | Written for this repository | MIT | Original |
 
@@ -40,3 +42,13 @@ Imagegen's installed SKILL.md has Git blob ID
 
 The repository's root MIT license does not replace third-party licenses.
 Retain the license and NOTICE files when redistributing individual folders.
+
+The writing skills were added in v1.1.0 on the snapshot date above. Humanizer's
+SKILL.md matches the public upstream blob
+`19fc634208e8cc6ae55d4ff287152583216fd244` inspected when packaging.
+Humanize Korean's baseline.json matches the public upstream blob
+`8565b1e5efc3c336d956851aad7e1aace1900e63`; its historical corpus labels and
+calibration values are upstream reference data, not private inputs from this
+workspace. Its installed Codex adaptations are retained without asserting an
+exact upstream commit match. No prior rewriting runs, drafts, or Python caches
+are included.

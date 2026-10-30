@@ -1,0 +1,5 @@
+humanize-korean
+Source: https://github.com/epoko77-ai/im-not-ai/tree/main/skills/humanize-korean
+Snapshot: 2026-10-31 (Asia/Seoul)
+License: MIT
+Copyright (c) 2026 epoko77-ai. Installed Codex-adapted snapshot with references, helper scripts, and UI metadata preserved. Excluded generated Python caches; added this NOTICE. The baseline.json matches the public upstream file inspected when packaging. No user input/output runs are bundled.
