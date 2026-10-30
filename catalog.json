@@ -3,43 +3,23 @@
   "snapshot_date": "2026-10-31",
   "profiles": {
     "web": [
-      "web-build",
-      "frontend-design",
-      "web-check"
+      "frontend-design"
     ],
     "design": [
-      "web-build",
-      "hallmark",
-      "web-check"
+      "hallmark"
     ],
-    "images": [
-      "imagegen"
-    ],
-    "all": [
-      "web-build",
-      "frontend-design",
-      "web-check",
-      "hallmark",
-      "imagegen",
+    "writing": [
       "humanize-korean",
       "humanizer"
     ],
-    "writing": [
+    "all": [
+      "frontend-design",
+      "hallmark",
       "humanize-korean",
       "humanizer"
     ]
   },
   "skills": {
-    "web-build": {
-      "summary": "Portable local HTML/CSS/JS implementation and delivery",
-      "license": "MIT",
-      "source": "Written for this collection",
-      "sha256": {
-        "LICENSE": "eebde30a9e4e66291b750a1fd1751d342a208897d385b16450373b6df4e27f13",
-        "NOTICE": "c76d79da345247aaae68408383b8da452a49869980bf9d28e405507f5294bb25",
-        "SKILL.md": "af1706177913344ad19cc3763f4a318db4427d98618a5acce6e13ea17f728e30"
-      }
-    },
     "frontend-design": {
       "summary": "Frontend typography, layout, and visual design",
       "license": "Apache-2.0",
@@ -49,16 +29,6 @@
         "NOTICE": "3813871aecb07b573f7c6d7eb4c45a99e02ab5d02a5810e7b1ebdee7be6c876d",
         "SKILL.md": "b8009ae690dfa69edc7f08bb8715f32db8817112cfa4388741dbaf876c237df8",
         "UPSTREAM_THIRD_PARTY_NOTICES.md": "a8ff7a84dee9dfb42ab448de281784387ceafdf63881b7c070ee2de7f6ed865c"
-      }
-    },
-    "web-check": {
-      "summary": "Interaction, responsive, accessibility, and delivery checks",
-      "license": "MIT",
-      "source": "Written for this collection",
-      "sha256": {
-        "LICENSE": "eebde30a9e4e66291b750a1fd1751d342a208897d385b16450373b6df4e27f13",
-        "NOTICE": "66d74098ce3c19ac3eabc963eaf6f582a1cf84222e604beac81bac4f8bf5e711",
-        "SKILL.md": "633cd35d442402aacc608cdae0c82037e7076e6a6f9402fd8ea54949019f8241"
       }
     },
     "hallmark": {
@@ -179,26 +149,6 @@
       },
       "support_resource_commit": "72f3dc052e661e2e084d5da75dfc3cff5bf7dff0"
     },
-    "imagegen": {
-      "summary": "Raster image generation/editing; requires an image tool or API",
-      "license": "Apache-2.0",
-      "source": "https://github.com/openai/skills/tree/main/skills/.system/imagegen",
-      "sha256": {
-        "agents/openai.yaml": "1797be4076717806df54aa9331c07ac8eebe32c69f32132d5858712b05406146",
-        "assets/imagegen-small.svg": "087c1632a3b8a2ed4d6218952e7ba7ae2221a979f84233667ed2c587998784da",
-        "assets/imagegen.png": "95952f644064eb9e890f98d8db07216347186526e4c41ad66d3420629eb86e20",
-        "LICENSE.txt": "44e03f7e263eb3ad256440c1eeab5e49168baff5a78ecef9a5447261cf3a91bc",
-        "NOTICE": "7c3a0e3eed5b4ca89228bf2d1a8729938efe20e283a39b28809e141442d17125",
-        "references/cli.md": "29dc8c1e3e5d9a20aee587fedb46a464552b6ec118d93bbd90c8d86e30502c8c",
-        "references/codex-network.md": "cba3b4d24d30f38adf8021b6e9b49ec5261a9e45e7df31047ec451c916c99b0a",
-        "references/image-api.md": "695909437b792aff171477dba127476a11235c220beb06533cce7c1495a042c8",
-        "references/prompting.md": "d957a45cb24fe2cf1a85858674fc533f15a5f4621355f559a13a93168999c2dd",
-        "references/sample-prompts.md": "76cc8a2988efb6e844a99ff9908b2b11cc07467510fc909002abcc0ee3f0701b",
-        "scripts/image_gen.py": "3666b807de3f0a1d0a4a767b886d612c0b8f71025c500bba6693d1c6995a0873",
-        "scripts/remove_chroma_key.py": "fa2989807052b857bed08f7fee0caa2502b54c46afc0a6f28cd706c25f636630",
-        "SKILL.md": "706d4d96e1d5c9e6023fe3ccabba1bb34b364024d344fd25b8515ec7d28fe3c4"
-      }
-    },
     "humanize-korean": {
       "summary": "Korean prose diagnosis, targeted rewriting, and fidelity gates",
       "license": "MIT",
@@ -251,5 +201,5 @@
       }
     }
   },
-  "release_version": "v1.1.0"
+  "release_version": "v1.2.0"
 }

@@ -13,6 +13,9 @@ from install import load_catalog, verify_skill  # noqa: E402
 def main():
     catalog = load_catalog()
     errors = []
+    actual_folders = {p.name for p in (ROOT / "skills").iterdir() if p.is_dir()}
+    if actual_folders != set(catalog["skills"]):
+        errors.append("Skill folders do not match the catalog")
     for name, entry in catalog["skills"].items():
         try:
             folder = verify_skill(name, entry)

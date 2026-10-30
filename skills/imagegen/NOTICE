@@ -1,5 +1,0 @@
-imagegen
-Source: https://github.com/openai/skills/tree/main/skills/.system/imagegen
-Snapshot: 2026-10-31 (Asia/Seoul)
-License: Apache-2.0
-Original installed Codex system skill, assets, scripts, references, and Apache-2.0 license preserved. Added this NOTICE. Origin: OpenAI imagegen skill.

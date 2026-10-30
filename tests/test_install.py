@@ -45,10 +45,10 @@ class InstallTests(unittest.TestCase):
         existing = self.project / ".agents/skills/frontend-design"
         existing.mkdir(parents=True)
         (existing / "SKILL.md").write_text("Existing user's work", encoding="utf-8")
-        result = self.run_installer("--profile", "web", "--project", self.project)
+        result = self.run_installer("--skills", "humanizer", "frontend-design", "--project", self.project)
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual((existing / "SKILL.md").read_text(), "Existing user's work")
-        self.assertFalse((existing.parent / "web-build").exists())
+        self.assertFalse((existing.parent / "humanizer").exists())
 
     def test_dry_run_writes_nothing(self):
         result = self.run_installer("--profile", "all", "--project", self.project, "--dry-run")
@@ -57,12 +57,12 @@ class InstallTests(unittest.TestCase):
 
     def test_custom_target(self):
         target = Path(self.temp.name) / "custom skills"
-        result = self.run_installer("--skills", "web-check", "--target", target)
+        result = self.run_installer("--skills", "humanizer", "--target", target)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertTrue((target / "web-check/SKILL.md").is_file())
+        self.assertTrue((target / "humanizer/SKILL.md").is_file())
 
     def test_unknown_and_traversal_names_write_nothing(self):
-        for name in ("not-a-skill", "../escape"):
+        for name in ("not-a-skill", "../escape", "web-build", "web-check", "imagegen"):
             result = self.run_installer("--skills", name, "--project", self.project)
             self.assertNotEqual(result.returncode, 0)
         self.assertFalse(self.project.exists())

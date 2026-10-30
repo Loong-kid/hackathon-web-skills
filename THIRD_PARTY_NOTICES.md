@@ -2,20 +2,17 @@
 
 Snapshot date: 2026-10-31 (Asia/Seoul).
 
-This is a personal curated redistribution, not an official Anthropic, OpenAI,
-or Hallmark distribution. Names identify the original projects.
+This is a personal curated redistribution. Names identify the original projects.
 
 | Component | Origin | License | Packaging changes |
 | --- | --- | --- | --- |
 | `skills/frontend-design/` | Installed snapshot from [anthropics/skills](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | Apache-2.0 | Original instruction/license bytes preserved; added NOTICE and upstream third-party notices |
 | `skills/hallmark/` | Installed snapshot from [Nutlope/hallmark](https://github.com/Nutlope/hallmark/tree/main/skills/hallmark) | MIT | Moved version into metadata; added portability note, MIT license, NOTICE, and canonical theme tokens; repaired resource links |
-| `skills/imagegen/` | Installed Codex system snapshot; [public source location](https://github.com/openai/skills/tree/main/skills/.system/imagegen) | Apache-2.0 | Original skill, resources, scripts, assets, and license preserved; added NOTICE |
 | `skills/humanize-korean/` | Installed Codex-adapted snapshot of [epoko77-ai/im-not-ai](https://github.com/epoko77-ai/im-not-ai/tree/main/skills/humanize-korean) | MIT, copyright 2026 epoko77-ai | Original instructions, references, scripts, and UI metadata preserved; excluded generated caches; added NOTICE |
 | `skills/humanizer/` | Installed snapshot of [blader/humanizer](https://github.com/blader/humanizer) | MIT, copyright 2025 Siqi Chen | Original SKILL.md, LICENSE, and UI metadata preserved; added NOTICE; upstream development and plugin packaging files omitted |
-| `skills/web-build/`, `skills/web-check/` | Written for this repository | MIT | Original portable instructions, not copies of proprietary plugin skills |
 | Packaging scripts, tests, and repository documentation | Written for this repository | MIT | Original |
 
-The installed Hallmark and Imagegen snapshots are not asserted to match the
+The installed Hallmark snapshot is not asserted to match the
 current upstream branch or a particular upstream commit. Local installed
 snapshots are the source of truth for this collection. `catalog.json` records
 the redistributed file SHA-256 values. No credentials, user project source,
@@ -36,9 +33,6 @@ The canonical CSS was bundled from upstream commit
 `references/upstream/tokens.css`. Links to those tokens now resolve inside the
 skill; human-only recipes and example links point to GitHub permalinks at that
 commit. The per-skill NOTICE lists the seven Markdown files whose links changed.
-
-Imagegen's installed SKILL.md has Git blob ID
-`c39b1f921ce679f08416ab16ceb01945835bb950`.
 
 The repository's root MIT license does not replace third-party licenses.
 Retain the license and NOTICE files when redistributing individual folders.

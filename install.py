@@ -51,7 +51,7 @@ def verify_skill(name, entry):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     select = parser.add_mutually_exclusive_group()
-    select.add_argument("--profile", choices=("web", "design", "images", "writing", "all"))
+    select.add_argument("--profile", choices=("web", "design", "writing", "all"))
     select.add_argument("--skills", nargs="+", metavar="NAME")
     parser.add_argument("--list", action="store_true", help="List skills and profiles")
     parser.add_argument("--agent", choices=sorted(AGENT_DIRS), default="codex")

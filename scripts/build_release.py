@@ -30,8 +30,8 @@ def main():
     subprocess.run([sys.executable, str(ROOT / "scripts/verify.py")], check=True)
     catalog = json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
     version = catalog["release_version"]
-    output = ROOT / ".release"
-    output.mkdir(exist_ok=True)
+    output = ROOT / ".release" / version
+    output.mkdir(parents=True, exist_ok=True)
     archives = []
     for name in catalog["skills"]:
         destination = output / (name + ".zip")
